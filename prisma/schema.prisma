@@ -15,12 +15,25 @@ datasource db {
 }
 
 model Player {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    id          Int           @id @default(autoincrement())
+    name        String
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @updatedAt
+    playerStats PlayerStats[]
 
     @@index([name])
+}
+
+// player_stats.prisma
+model PlayerStats {
+    stat_id           Int    @id @default(autoincrement())
+    physicalCondition Int
+    passes            Int
+    power             Int
+    dribbling         Int
+    speed             Int
+    playerId          Int
+    Player            Player @relation(fields: [playerId], references: [id])
 }
 
 // Necessary for Next auth
