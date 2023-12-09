@@ -21,7 +21,9 @@ export default {
         white: "background-color: rgb(245 245 245 / 1);",
       },
       gridRow: {
-        "grid-rows-16": "repeat(16, minmax(0, 1fr))",
+        "span-10": "span 10 / span 10",
+        "span-11": "span 11 / span 11",
+        "span-12": "span 12 / span 10",
       },
     },
   },

@@ -5,7 +5,7 @@ export default async function Home() {
   // const session = await getServerAuthSession();
 
   return (
-    <main className="bg-ternary text-ternary min-h-screen w-full p-12">
+    <main className="bg-ternary text-ternary min-h-screen w-full p-10">
       <Dashboard />
     </main>
   );

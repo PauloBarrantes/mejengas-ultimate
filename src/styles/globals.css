@@ -6,4 +6,12 @@
   html {
     font-family: var(--font-poppins);
   }
+
+
+  input[type="range"] {
+    /* removing default appearance */
+    width: 100%;
+    cursor: pointer;
+  }
+
 }

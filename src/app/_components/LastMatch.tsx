@@ -1,21 +1,30 @@
 import Image from "next/image";
 import TeamLogo from "../../../public/images/team.png";
-interface LastMatchProps {}
+import React from "react";
+import { cn } from "~/utils/utils";
+import { motion } from "framer-motion";
 
-const LastMatch = ({}: LastMatchProps) => {
+interface LastMatchProps {
+  id: string;
+}
+
+const LastMatch = ({ id }: LastMatchProps) => {
   return (
-    <div
-      className={`col-span-8 row-span-4 flex flex-row justify-between rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 `}
+    <motion.div
+      layoutId={id}
+      className={cn(
+        "col-span-8 row-span-4 flex flex-row justify-between rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4",
+      )}
     >
       <div className="flex flex-col justify-between">
         <div>
-          <h1 className="font-display text-ternary text-4xl font-bold leading-relaxed tracking-wide">
+          <h1 className="font-display text-4xl font-bold leading-relaxed tracking-wide text-ternary">
             Last Match
           </h1>
           <p>Date: 28/11/2023</p>
         </div>
         <div className="relative">
-          <button className="border-ternary shadow-secondary hover:shadow-secondary-hover border-2 bg-neutral-100 px-5 py-2 tracking-wide transition-shadow ">
+          <button className="border-2 border-ternary bg-neutral-100 px-5 py-2 tracking-wide shadow-secondary transition-shadow hover:shadow-secondary-hover ">
             Vote for MVP
           </button>
         </div>
@@ -29,7 +38,7 @@ const LastMatch = ({}: LastMatchProps) => {
         />
         <Image src={TeamLogo} alt="First Team" width={200} height={100} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
